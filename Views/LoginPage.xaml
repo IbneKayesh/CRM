@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             x:Class="CRM.Views.LoginPage"
+             Title="Login"            
+             BackgroundColor="#D5E0F5">
+
+    <Grid VerticalOptions="Center" HorizontalOptions="Center" Padding="10" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="sieve_logo_new.png" WidthRequest="100" HeightRequest="100"  Grid.Row="0" Grid.Column="1"/>
+
+        <Label Text="Welcome to CRM!" FontSize="28" TextColor="Gray" HorizontalOptions="CenterAndExpand"  Grid.Row="1" Grid.Column="1"/>
+        <Label Text="Sign to your account!" FontSize="14" TextColor="Gray" HorizontalOptions="CenterAndExpand" Grid.Row="2" Grid.Column="1"/>
+
+
+        <Image Source="user_28.png" HeightRequest="28" WidthRequest="28"  Grid.Row="3" Grid.Column="0"/>
+        <Entry VerticalOptions="Center"  Grid.Row="3" Grid.Column="1" Placeholder="User Id" Keyboard="Email"/>
+
+        <Image Source="password_28.png" HeightRequest="28" WidthRequest="28" Grid.Row="4" Grid.Column="0"/>
+        <Entry IsPassword="True" VerticalOptions="Center" Grid.Row="4" Grid.Column="1" Placeholder="Password" Keyboard="Email"/>
+
+        <Button Text="Sign In" CornerRadius="20" HeightRequest="40" BackgroundColor="#C994F7" Grid.Row="5" Grid.Column="1" Command="{Binding Login}"/>
+
+
+        <Label Text="Forget password? Request new one!" HorizontalTextAlignment="Center" Grid.Row="6" Grid.ColumnSpan="2"/>
+    </Grid>
+</ContentPage>
