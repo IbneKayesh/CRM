@@ -2,13 +2,15 @@
 
 namespace CRM.ViewModels
 {
-    public partial class BaseViewModel:ObservableObject
+    public partial class BaseViewModel : ObservableObject
     {
         [ObservableProperty]
-        private bool _isBusy;
-
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
+        bool isBusy;
 
         [ObservableProperty]
-        private string _title;
+        string title;
+
+        public bool IsNotBusy => !IsBusy;
     }
 }

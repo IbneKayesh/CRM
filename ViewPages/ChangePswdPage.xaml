@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRM.ViewPages.ChangePswdPage"
+             xmlns:models="clr-namespace:CRM.ViewModels"
+             x:DataType="models:ChangePswdViewModel"
+             Title="{Binding Title}">
+
+    <Grid RowSpacing="10" Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="{Binding Title}" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+        <Image Source="user_28.png" Grid.Row="2" Grid.Column="0"/>
+        <Label Text="{Binding user_id}" Grid.Row="2" Grid.Column="1"/>
+
+        <Image Source="lock_28.png" Grid.Row="3" Grid.Column="0"/>
+        <Entry Text="{Binding user_pswd}" Placeholder="Old Password" Grid.Row="3" Grid.Column="1"/>
+
+        <Image Source="lock_28.png" Grid.Row="4" Grid.Column="0"/>
+        <Entry Text="{Binding user_pswd_new}" Placeholder="New Password" Grid.Row="4" Grid.Column="1"/>
+
+        <Image Source="lock_28.png" Grid.Row="5" Grid.Column="0"/>
+        <Entry Text="{Binding user_pswd_conf}" Placeholder="Confirm Password" Grid.Row="5" Grid.Column="1"/>
+
+        <Button Text="Change Password" Command="{Binding ChangePasswordCommand}" BackgroundColor="#3498DB" CornerRadius="20"
+         Grid.Row="6" Grid.Column="1"/>
+
+    </Grid>
+
+
+</ContentPage>

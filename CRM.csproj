@@ -49,13 +49,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\password_28.png" />
+	  <None Remove="Resources\Images\cart_28.png" />
+	  <None Remove="Resources\Images\golf_car_28.png" />
+	  <None Remove="Resources\Images\lock_28.png" />
 	  <None Remove="Resources\Images\sieve_logo_new.png" />
+	  <None Remove="Resources\Images\squares_28.png" />
 	  <None Remove="Resources\Images\user_28.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Services\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -63,10 +62,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\HomePage.xaml">
+	  <MauiXaml Update="ViewPages\ChangePswdPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\LoginPage.xaml">
+	  <MauiXaml Update="ViewPages\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewPages\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ViewPages\OrderTrackingPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Page1.xaml">

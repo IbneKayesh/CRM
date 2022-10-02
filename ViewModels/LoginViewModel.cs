@@ -1,28 +1,66 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using CRM.Views;
-using System.Windows.Input;
+﻿using CommunityToolkit.Mvvm.Input;
+using CRM.Models;
+using CRM.ViewPages;
 
 namespace CRM.ViewModels
 {
     public partial class LoginViewModel:BaseViewModel
     {
-        #region Commands
+        //Property
+        public string user_id { get; set; }
+        public string user_pswd { get; set; }
+        //Property
 
-        public ICommand Login { private set; get; }
+        [RelayCommand]
+        public async void Login()
+        {
+            //validations
+            if (string.IsNullOrWhiteSpace(user_id) || string.IsNullOrWhiteSpace(user_pswd))
+            {
+                await Shell.Current.CurrentPage.DisplayAlert("Error", "User Id and Password is Required", "Ok");
+                return;
+            }
 
-        public LoginViewModel()
-        {
-            Login = new Command(
-              execute: () =>
-              {
-                  LoginCommand();
-              });
+            //API/Database Object Conversion
+            var user_login = new USER_LOGIN
+            {
+                USER_ID = user_id,
+                USER_PSWD = user_pswd
+            };
+            //End API/Database Object Conversion
+
+            //Call Api
+            var obj = CRM.Services.CRM.UserService.ValidateUser(user_login);
+
+            if (obj)
+            {
+                await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+            }
+            else
+            {
+                await Shell.Current.CurrentPage.DisplayAlert("Login Failed","User or Password is Invalid", "Ok");
+            }
+
         }
-        async void LoginCommand()
-        {
-           await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
-        }
+
+
+
+        #region Test Commands
+
+        //public ICommand Login { private set; get; }
+
+        //public LoginViewModel()
+        //{
+        //    Login = new Command(
+        //      execute: () =>
+        //      {
+        //          LoginCommand();
+        //      });
+        //}
+        //async void LoginCommand()
+        //{
+        //   await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+        //}
         #endregion
     }
 }

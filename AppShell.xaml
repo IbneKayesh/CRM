@@ -3,23 +3,42 @@
     x:Class="CRM.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-     Shell.TabBarIsVisible="False"
-    xmlns:local="clr-namespace:CRM.Views">
+    Shell.TabBarIsVisible="False"
+    xmlns:local="clr-namespace:CRM.ViewPages">
 
     <ShellContent 
-            FlyoutItemIsVisible="True"
+            FlyoutItemIsVisible="False"
             Shell.FlyoutBehavior="Disabled"
-            Title="Login Page"
+            Title="Login"
             Shell.NavBarIsVisible="True"
             ContentTemplate="{DataTemplate local:LoginPage}"
             Route="LoginPage" />
-
-    <FlyoutItem>
-
-        <ShellContent
-            Title="Home Page"
+    
+    
+    <ShellContent
+            Icon="squares_28.png"
+            Title="Home"
             ContentTemplate="{DataTemplate local:HomePage}"
             Route="HomePage" />
 
-    </FlyoutItem>
+    <ShellContent
+            Icon="cart_28.png"
+            Title="Home"
+            ContentTemplate="{DataTemplate local:HomePage}"
+            Route="HomePage" />
+    
+
+    <ShellContent
+            Icon="lock_28.png"
+            Title="Change Password"
+            ContentTemplate="{DataTemplate local:ChangePswdPage}"
+            Route="ChangePswdPage" />
+
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Log Out"  BackgroundColor="#3498DB" CornerRadius="20" Command="{Binding LogoutCommand}" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
 </Shell>

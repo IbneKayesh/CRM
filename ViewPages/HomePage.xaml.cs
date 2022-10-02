@@ -1,6 +1,6 @@
 using CRM.ViewModels;
 
-namespace CRM.Views;
+namespace CRM.ViewPages;
 
 public partial class HomePage : ContentPage
 {
