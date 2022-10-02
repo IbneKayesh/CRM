@@ -23,9 +23,9 @@
 
     <ShellContent
             Icon="cart_28.png"
-            Title="Home"
-            ContentTemplate="{DataTemplate local:HomePage}"
-            Route="HomePage" />
+            Title="Order Tracking"
+            ContentTemplate="{DataTemplate local:OrderTrackingPage}"
+            Route="OrderTrackingPage" />
     
 
     <ShellContent

@@ -16,5 +16,15 @@ namespace CRM.Services.CRM
             }
             return false;
         }
+
+        public static bool ChangePassword(USER_PASSWORD obj)
+        {
+            //sql query / call API
+            if (obj.USER_PSWD != obj.USER_PSWD_NEW)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
